@@ -1,0 +1,11 @@
+# weights, merges and upstream clones are fetched by setup/, never committed
+hf/
+third_party/
+merged/
+checkpoints/
+venv*/
+.venv*/
+nimble-model.json
+*.log
+__pycache__/
+*.pyc

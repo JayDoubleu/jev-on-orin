@@ -1,0 +1,108 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cpu",
+  "torch": "2.8.0",
+  "model": "wfzyx/von-1.0",
+  "load_plus_first_call_seconds": 5.414623594027944,
+  "repeats": 20,
+  "timing_scope": "von.system_one() wall time incl. tokenisation; 3 warmups then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "seconds": {
+        "min": 0.7959012420615181,
+        "median": 0.9868137799785472,
+        "mean": 1.0302725937392097,
+        "p95": 1.483828666410409,
+        "max": 1.6861655649263412
+      },
+      "seconds_per_field_median": 0.4934068899892736,
+      "output": {
+        "priority": {
+          "choice": "HIGH",
+          "confidence": 0.989
+        },
+        "requires_review": {
+          "noul": 0.984
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "seconds": {
+        "min": 9.777604380971752,
+        "median": 11.93518682703143,
+        "mean": 11.63552227090695,
+        "p95": 12.667978903633776,
+        "max": 12.720320458058268
+      },
+      "seconds_per_field_median": 1.9891978045052383,
+      "output": {
+        "route": {
+          "choice": "BILLING",
+          "confidence": 0.371
+        },
+        "sentiment": {
+          "choice": "NEGATIVE",
+          "confidence": 1.0
+        },
+        "severity": {
+          "score": 1.0,
+          "confidence": 0.994
+        },
+        "mentions_refund": {
+          "noul": 0.999
+        },
+        "is_customer": {
+          "noul": 1.0
+        },
+        "needs_human": {
+          "noul": 1.0
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "seconds": {
+        "min": 51.08879632502794,
+        "median": 60.97948307648767,
+        "mean": 61.51608286119299,
+        "p95": 67.35157887399546,
+        "max": 73.70182187797036
+      },
+      "seconds_per_field_median": 60.97948307648767,
+      "output": {
+        "supported": {
+          "choice": "SUPPORTED",
+          "confidence": 0.99
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "seconds": {
+        "min": 0.8301878330530599,
+        "median": 1.1105053339269944,
+        "mean": 1.171510231506545,
+        "p95": 1.6709535970760043,
+        "max": 1.7028338870732114
+      },
+      "seconds_per_field_median": 1.1105053339269944,
+      "output": {
+        "supported": {
+          "choice": "SUPPORTED",
+          "confidence": 0.99
+        }
+      }
+    }
+  ],
+  "sustained_readme_case": {
+    "seconds": 20.15215752099175,
+    "decisions": 19,
+    "decisions_per_second": 0.9428270883754462
+  }
+}

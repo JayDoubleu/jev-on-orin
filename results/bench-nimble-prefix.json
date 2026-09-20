@@ -1,0 +1,314 @@
+{
+  "load_seconds": 34.579254886019044,
+  "runtime": {
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "device_map": null,
+    "max_gpu_memory": null,
+    "placement": null,
+    "torch": "2.8.0",
+    "cuda": "12.6",
+    "hip": null,
+    "gpus": [
+      "Orin"
+    ]
+  },
+  "repeats": 5,
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "modes": {
+        "independent": {
+          "seconds": {
+            "min": 0.47218678100034595,
+            "median": 0.4723123140865937,
+            "mean": 0.4731547308154404,
+            "p95": 0.4754387618042529,
+            "max": 0.4760498210089281
+          },
+          "output": {
+            "priority": "HIGH",
+            "requires_review": true
+          },
+          "peak_gib": 17.579910278320312,
+          "prefix_tokens": null,
+          "suffix_tokens": null
+        },
+        "cached_serial": {
+          "seconds": {
+            "min": 0.6348457250278443,
+            "median": 0.6429913719184697,
+            "mean": 0.650291660358198,
+            "p95": 0.6764552915468812,
+            "max": 0.6829352199565619
+          },
+          "output": {
+            "priority": "HIGH",
+            "requires_review": true
+          },
+          "peak_gib": 17.66443920135498,
+          "prefix_tokens": 221,
+          "suffix_tokens": [
+            12,
+            13
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.052082061767578125,
+            "max_prob_diff": 0.00011107022874057293,
+            "same_choices": true
+          }
+        },
+        "parallel": {
+          "seconds": {
+            "min": 0.4370390640106052,
+            "median": 0.4379003359936178,
+            "mean": 0.43969759419560434,
+            "p95": 0.44415091620758174,
+            "max": 0.44493931101169437
+          },
+          "output": {
+            "priority": "HIGH",
+            "requires_review": true
+          },
+          "peak_gib": 17.724318981170654,
+          "prefix_tokens": 221,
+          "suffix_tokens": [
+            12,
+            13
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.0792083740234375,
+            "max_prob_diff": 0.00011237058788537979,
+            "same_choices": true
+          }
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "modes": {
+        "independent": {
+          "seconds": {
+            "min": 3.8754285209579393,
+            "median": 3.8786015959922224,
+            "mean": 3.878958509187214,
+            "p95": 3.8834844239987434,
+            "max": 3.884066416998394
+          },
+          "output": {
+            "route": "TECHNICAL",
+            "sentiment": "NEGATIVE",
+            "severity": "S3",
+            "mentions_refund": true,
+            "is_customer": true,
+            "needs_human": true
+          },
+          "peak_gib": 17.634804248809814,
+          "prefix_tokens": null,
+          "suffix_tokens": null
+        },
+        "cached_serial": {
+          "seconds": {
+            "min": 1.8032254879362881,
+            "median": 1.8174099320312962,
+            "mean": 1.8143354346044362,
+            "p95": 1.8206179942470044,
+            "max": 1.8209885640535504
+          },
+          "output": {
+            "route": "TECHNICAL",
+            "sentiment": "NEGATIVE",
+            "severity": "S3",
+            "mentions_refund": true,
+            "is_customer": true,
+            "needs_human": true
+          },
+          "peak_gib": 17.70708990097046,
+          "prefix_tokens": 643,
+          "suffix_tokens": [
+            12,
+            13,
+            12,
+            14,
+            13,
+            13
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.10547256469726562,
+            "max_prob_diff": 0.003346681594848633,
+            "same_choices": true
+          }
+        },
+        "parallel": {
+          "seconds": {
+            "min": 0.8558460399508476,
+            "median": 0.8566000598948449,
+            "mean": 0.8571685497881845,
+            "p95": 0.8594326750840992,
+            "max": 0.8600786800961941
+          },
+          "output": {
+            "route": "TECHNICAL",
+            "sentiment": "NEGATIVE",
+            "severity": "S3",
+            "mentions_refund": true,
+            "is_customer": true,
+            "needs_human": true
+          },
+          "peak_gib": 18.101786136627197,
+          "prefix_tokens": 643,
+          "suffix_tokens": [
+            12,
+            13,
+            12,
+            14,
+            13,
+            13
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.0936737060546875,
+            "max_prob_diff": 0.002064943313598633,
+            "same_choices": true
+          }
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "modes": {
+        "independent": {
+          "seconds": {
+            "min": 1.1740944579942152,
+            "median": 1.175647110096179,
+            "mean": 1.1753881138050928,
+            "p95": 1.1763299747835845,
+            "max": 1.1764491409994662
+          },
+          "output": {
+            "supported": "NOT_SUPPORTED"
+          },
+          "peak_gib": 17.7148175239563,
+          "prefix_tokens": null,
+          "suffix_tokens": null
+        },
+        "cached_serial": {
+          "seconds": {
+            "min": 1.3715718189487234,
+            "median": 1.3751764529151842,
+            "mean": 1.375277821603231,
+            "p95": 1.380151352286339,
+            "max": 1.3813926310976967
+          },
+          "output": {
+            "supported": "NOT_SUPPORTED"
+          },
+          "peak_gib": 17.800106525421143,
+          "prefix_tokens": 1239,
+          "suffix_tokens": [
+            12
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.049468994140625,
+            "max_prob_diff": 3.713369369506836e-05,
+            "same_choices": true
+          }
+        },
+        "parallel": {
+          "seconds": {
+            "min": 1.378490002010949,
+            "median": 1.3788517649518326,
+            "mean": 1.3791506780078635,
+            "p95": 1.3801845642505213,
+            "max": 1.3804446790600196
+          },
+          "output": {
+            "supported": "NOT_SUPPORTED"
+          },
+          "peak_gib": 17.800106525421143,
+          "prefix_tokens": 1239,
+          "suffix_tokens": [
+            12
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.049468994140625,
+            "max_prob_diff": 3.713369369506836e-05,
+            "same_choices": true
+          }
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "modes": {
+        "independent": {
+          "seconds": {
+            "min": 0.21915003994945437,
+            "median": 0.2202785030240193,
+            "mean": 0.22008759679738432,
+            "p95": 0.22130104342941195,
+            "max": 0.22155299002770334
+          },
+          "output": {
+            "supported": "SUPPORTED"
+          },
+          "peak_gib": 17.579453945159912,
+          "prefix_tokens": null,
+          "suffix_tokens": null
+        },
+        "cached_serial": {
+          "seconds": {
+            "min": 0.4131642481079325,
+            "median": 0.4140061750076711,
+            "mean": 0.4144743783865124,
+            "p95": 0.4156253345310688,
+            "max": 0.41564067092258483
+          },
+          "output": {
+            "supported": "SUPPORTED"
+          },
+          "peak_gib": 17.66856288909912,
+          "prefix_tokens": 185,
+          "suffix_tokens": [
+            12
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.034404754638671875,
+            "max_prob_diff": 2.4826586013659835e-06,
+            "same_choices": true
+          }
+        },
+        "parallel": {
+          "seconds": {
+            "min": 0.41545920993667096,
+            "median": 0.4160581829492003,
+            "mean": 0.4165065879933536,
+            "p95": 0.41768135039601473,
+            "max": 0.4177814209833741
+          },
+          "output": {
+            "supported": "SUPPORTED"
+          },
+          "peak_gib": 17.66856336593628,
+          "prefix_tokens": 185,
+          "suffix_tokens": [
+            12
+          ],
+          "vs_independent": {
+            "max_logit_diff": 0.034404754638671875,
+            "max_prob_diff": 2.4826586013659835e-06,
+            "same_choices": true
+          }
+        }
+      }
+    }
+  ],
+  "sustained_parallel_readme": {
+    "decisions": 68,
+    "seconds": 30.437642764067277,
+    "decisions_per_second": 2.234075763589565
+  }
+}

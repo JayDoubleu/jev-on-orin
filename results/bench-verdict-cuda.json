@@ -1,0 +1,120 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cuda",
+  "torch": "2.8.0",
+  "transformers": "5.17.0",
+  "params_million": 151.378177,
+  "load_seconds": 5.397247452987358,
+  "repeats": 20,
+  "timing_scope": "engine.evaluate() wall time incl. tokenisation, all fields in one batched forward; 3 warmups then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "context_tokens": 11,
+      "seconds": {
+        "min": 0.040839130990207195,
+        "median": 0.04621265042806044,
+        "mean": 0.0480654667771887,
+        "p95": 0.0569358597509563,
+        "max": 0.06500846205744892
+      },
+      "seconds_per_field_median": 0.02310632521403022,
+      "output": {
+        "priority": {
+          "selected": "HIGH",
+          "p": 0.958,
+          "abstain": false
+        },
+        "requires_review": {
+          "is_abstention": false
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "context_tokens": 92,
+      "seconds": {
+        "min": 0.11756719299592078,
+        "median": 0.1204573480063118,
+        "mean": 0.12047131987637841,
+        "p95": 0.12249507171218284,
+        "max": 0.12257870298344642
+      },
+      "seconds_per_field_median": 0.020076224667718634,
+      "output": {
+        "route": {
+          "selected": "TECHNICAL",
+          "p": 0.439,
+          "abstain": false
+        },
+        "sentiment": {
+          "selected": "NEGATIVE",
+          "p": 0.831,
+          "abstain": false
+        },
+        "severity": {
+          "selected": "__insufficient_evidence__",
+          "expected": null,
+          "abstain": true
+        },
+        "mentions_refund": {
+          "is_abstention": false
+        },
+        "is_customer": {
+          "is_abstention": false
+        },
+        "needs_human": {
+          "is_abstention": false
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "context_tokens": 1045,
+      "seconds": {
+        "min": 0.12687311100307852,
+        "median": 0.12828742252895609,
+        "mean": 0.12820296650752425,
+        "p95": 0.12947720835800283,
+        "max": 0.12969332106877118
+      },
+      "seconds_per_field_median": 0.12828742252895609,
+      "output": {
+        "supported": {
+          "selected": "__insufficient_evidence__",
+          "p": 0.413,
+          "abstain": true
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "context_tokens": 38,
+      "seconds": {
+        "min": 0.0387393559794873,
+        "median": 0.040860516019165516,
+        "mean": 0.04101026621065103,
+        "p95": 0.0436848365876358,
+        "max": 0.043762538000009954
+      },
+      "seconds_per_field_median": 0.040860516019165516,
+      "output": {
+        "supported": {
+          "selected": "SUPPORTED",
+          "p": 0.964,
+          "abstain": false
+        }
+      }
+    }
+  ],
+  "cuda_peak_gib": 0.6249213218688965,
+  "sustained_readme_case": {
+    "seconds": 20.034825221984647,
+    "decisions": 460,
+    "decisions_per_second": 22.960020609275496
+  }
+}

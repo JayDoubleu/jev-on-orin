@@ -1,0 +1,183 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87, iGPU, unified memory)",
+  "kernel": "5.15.148-tegra",
+  "python": "3.10.12",
+  "runtime": {
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "device_map": null,
+    "max_gpu_memory": null,
+    "placement": null,
+    "torch": "2.8.0",
+    "cuda": "12.6",
+    "hip": null,
+    "gpus": [
+      "Orin"
+    ]
+  },
+  "transformers": "5.17.0",
+  "peft": "0.21.0",
+  "load_seconds": 34.9553640630329,
+  "rss_gib_after_load": 18.486000061035156,
+  "cuda_allocated_gib_after_load": 17.537832260131836,
+  "repeats": 5,
+  "timing_scope": "scorer.score() wall time: tokenisation excluded, full-prompt prefill per field included; 1 warmup then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "prompt_tokens_per_field": [
+        233,
+        234
+      ],
+      "total_prompt_tokens": 467,
+      "seconds": {
+        "min": 0.46287745295558125,
+        "median": 0.4671939810505137,
+        "mean": 0.46653516800142825,
+        "p95": 0.46960080722346903,
+        "max": 0.4700864850310609
+      },
+      "seconds_per_field_median": 0.23359699052525684,
+      "prefill_tokens_per_second_median": 999.5847954845705,
+      "cuda_peak_active_gib": 17.579910278320312,
+      "output": {
+        "priority": "HIGH",
+        "requires_review": true
+      },
+      "scores": {
+        "priority": {
+          "HIGH": 0.9961728453636169,
+          "LOW": 0.0038272098172456026
+        },
+        "requires_review": {
+          "false": 0.013006379827857018,
+          "true": 0.986993670463562
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "prompt_tokens_per_field": [
+        616,
+        617,
+        616,
+        618,
+        617,
+        617
+      ],
+      "total_prompt_tokens": 3701,
+      "seconds": {
+        "min": 3.4621167599689215,
+        "median": 3.4637606779579073,
+        "mean": 3.4638043479761107,
+        "p95": 3.4656481228535996,
+        "max": 3.4661057140911
+      },
+      "seconds_per_field_median": 0.5772934463263178,
+      "prefill_tokens_per_second_median": 1068.4918341939142,
+      "cuda_peak_active_gib": 17.629179000854492,
+      "output": {
+        "route": "TECHNICAL",
+        "sentiment": "NEGATIVE",
+        "severity": "S3",
+        "mentions_refund": true,
+        "is_customer": true,
+        "needs_human": true
+      },
+      "scores": {
+        "route": {
+          "BILLING": 0.0014063381822779775,
+          "TECHNICAL": 0.9612053036689758,
+          "SALES": 0.03554684668779373,
+          "ABUSE": 7.10631866240874e-05,
+          "OTHER": 0.0017705026548355818
+        },
+        "sentiment": {
+          "POSITIVE": 1.1072822417190764e-05,
+          "NEUTRAL": 0.0018797159427776933,
+          "NEGATIVE": 0.9981092214584351
+        },
+        "severity": {
+          "S1": 0.000571779499296099,
+          "S2": 0.0976957306265831,
+          "S3": 0.899792492389679,
+          "S4": 0.0019399398006498814
+        },
+        "mentions_refund": {
+          "false": 0.0008368364069610834,
+          "true": 0.9991631507873535
+        },
+        "is_customer": {
+          "false": 0.0002941713610198349,
+          "true": 0.9997058510780334
+        },
+        "needs_human": {
+          "false": 0.0018847750034183264,
+          "true": 0.9981153011322021
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "prompt_tokens_per_field": [
+        1251
+      ],
+      "total_prompt_tokens": 1251,
+      "seconds": {
+        "min": 1.1378472179640085,
+        "median": 1.1389214250957593,
+        "mean": 1.1388700158102438,
+        "p95": 1.1395132719539105,
+        "max": 1.1395713959354907
+      },
+      "seconds_per_field_median": 1.1389214250957593,
+      "prefill_tokens_per_second_median": 1098.4076446668103,
+      "cuda_peak_active_gib": 17.714375019073486,
+      "output": {
+        "supported": "NOT_SUPPORTED"
+      },
+      "scores": {
+        "supported": {
+          "SUPPORTED": 0.0031079137697815895,
+          "NOT_SUPPORTED": 0.9968921542167664
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "prompt_tokens_per_field": [
+        197
+      ],
+      "total_prompt_tokens": 197,
+      "seconds": {
+        "min": 0.21239542600233108,
+        "median": 0.21436212700791657,
+        "mean": 0.21467326001729817,
+        "p95": 0.21676981181371957,
+        "max": 0.21679354400839657
+      },
+      "seconds_per_field_median": 0.21436212700791657,
+      "prefill_tokens_per_second_median": 919.005622633725,
+      "cuda_peak_active_gib": 17.579453945159912,
+      "output": {
+        "supported": "SUPPORTED"
+      },
+      "scores": {
+        "supported": {
+          "SUPPORTED": 0.9998170733451843,
+          "NOT_SUPPORTED": 0.00018289823492523283
+        }
+      }
+    }
+  ],
+  "sustained_readme_case": {
+    "seconds": 30.023741010925733,
+    "decisions": 64,
+    "decisions_per_second": 2.1316464186361785,
+    "fields_per_second": 4.263292837272357
+  }
+}

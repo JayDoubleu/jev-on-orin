@@ -1,0 +1,110 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cuda",
+  "torch": "2.8.0",
+  "model": "com-kotobalabs/open-jev-deberta-v3-large",
+  "params": 437159937,
+  "load_seconds": 8.149458311963826,
+  "repeats": 20,
+  "timing_scope": "OpenJev.decide() wall time incl. tokenisation; 3 warmups then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "seconds": {
+        "min": 0.08119576994795352,
+        "median": 0.08231372048612684,
+        "mean": 0.08342665644013322,
+        "p95": 0.09011559880455025,
+        "max": 0.09464029292576015
+      },
+      "seconds_per_field_median": 0.04115686024306342,
+      "output": [
+        {
+          "choice": "HIGH",
+          "confidence": 0.72
+        },
+        {
+          "noul": 0.978
+        }
+      ]
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "seconds": {
+        "min": 0.09822964400518686,
+        "median": 0.09888995299115777,
+        "mean": 0.09900049543357455,
+        "p95": 0.09929852933855728,
+        "max": 0.10190997004974633
+      },
+      "seconds_per_field_median": 0.01648165883185963,
+      "output": [
+        {
+          "choice": "TECHNICAL",
+          "confidence": 0.799
+        },
+        {
+          "choice": "NEGATIVE",
+          "confidence": 0.735
+        },
+        {
+          "score": 0.842,
+          "confidence": 0.494
+        },
+        {
+          "noul": 0.903
+        },
+        {
+          "noul": 0.916
+        },
+        {
+          "noul": 0.909
+        }
+      ]
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "seconds": {
+        "min": 0.12248381797689945,
+        "median": 0.12282818154199049,
+        "mean": 0.1229180840018671,
+        "p95": 0.12374718822538852,
+        "max": 0.12430222204420716
+      },
+      "seconds_per_field_median": 0.12282818154199049,
+      "output": [
+        {
+          "choice": "NOT_SUPPORTED",
+          "confidence": 0.525
+        }
+      ]
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "seconds": {
+        "min": 0.07913112896494567,
+        "median": 0.07963323401054367,
+        "mean": 0.07988919439958408,
+        "p95": 0.08119085146463476,
+        "max": 0.0821431779768318
+      },
+      "seconds_per_field_median": 0.07963323401054367,
+      "output": [
+        {
+          "choice": "NOT_SUPPORTED",
+          "confidence": 0.523
+        }
+      ]
+    }
+  ],
+  "cuda_peak_gib": 1.7040982246398926,
+  "sustained_readme_case": {
+    "seconds": 20.06490271689836,
+    "decisions": 244,
+    "decisions_per_second": 12.160537404176242
+  }
+}

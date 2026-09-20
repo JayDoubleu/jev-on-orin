@@ -1,0 +1,123 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cuda",
+  "torch": "2.8.0",
+  "transformers": "5.17.0",
+  "model": "nvidia/Nemotron-Labs-Diffusion-14B",
+  "params": 13506073600,
+  "load_seconds": 36.451418196898885,
+  "cuda_allocated_gib_after_load": 25.157022953033447,
+  "repeats": 5,
+  "timing_scope": "scoring.evaluate() metrics.seconds: tokenisation excluded, causal prefill + one masked slot per question, questions sequential; 1 warmup then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "total_prompt_tokens": 275,
+      "seconds": {
+        "min": 1.0059419699246064,
+        "median": 1.0074273709906265,
+        "mean": 1.0073512609815225,
+        "p95": 1.0082268176367506,
+        "max": 1.0083867920329794
+      },
+      "seconds_per_field_median": 0.5037136854953133,
+      "prefill_tokens_per_second_median": 272.9725317365421,
+      "cuda_peak_gib": 25.2060809135437,
+      "output": {
+        "priority": {
+          "confidence": 0.95,
+          "choice": "HIGH"
+        },
+        "requires_review": {
+          "noul": 0.958
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "total_prompt_tokens": 1450,
+      "seconds": {
+        "min": 3.564920002943836,
+        "median": 3.566171559970826,
+        "mean": 3.5661463145865127,
+        "p95": 3.5668817970203235,
+        "max": 3.5669769740197808
+      },
+      "seconds_per_field_median": 0.5943619266618043,
+      "prefill_tokens_per_second_median": 406.5984980295962,
+      "cuda_peak_gib": 25.245541095733643,
+      "output": {
+        "route": {
+          "confidence": 0.976,
+          "choice": "TECHNICAL"
+        },
+        "sentiment": {
+          "confidence": 0.994,
+          "choice": "NEGATIVE"
+        },
+        "severity": {
+          "confidence": 0.554,
+          "score": 1.3
+        },
+        "mentions_refund": {
+          "noul": 0.989
+        },
+        "is_customer": {
+          "noul": 0.998
+        },
+        "needs_human": {
+          "noul": 0.993
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "total_prompt_tokens": 1260,
+      "seconds": {
+        "min": 2.0500739839626476,
+        "median": 2.051660554949194,
+        "mean": 2.0521598253864797,
+        "p95": 2.0546815598616375,
+        "max": 2.0549155190819874
+      },
+      "seconds_per_field_median": 2.051660554949194,
+      "prefill_tokens_per_second_median": 614.1366791697186,
+      "cuda_peak_gib": 25.526142597198486,
+      "output": {
+        "supported": {
+          "confidence": 0.835,
+          "choice": "NOT_SUPPORTED"
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "total_prompt_tokens": 178,
+      "seconds": {
+        "min": 0.5334825980244204,
+        "median": 0.5340327410958707,
+        "mean": 0.5342390622012317,
+        "p95": 0.5348619078285992,
+        "max": 0.5348790930584073
+      },
+      "seconds_per_field_median": 0.5340327410958707,
+      "prefill_tokens_per_second_median": 333.3128969484758,
+      "cuda_peak_gib": 25.526142597198486,
+      "output": {
+        "supported": {
+          "confidence": 0.924,
+          "choice": "SUPPORTED"
+        }
+      }
+    }
+  ],
+  "sustained_readme_case": {
+    "seconds": 30.350194160011597,
+    "decisions": 29,
+    "decisions_per_second": 0.9555128328704213
+  }
+}

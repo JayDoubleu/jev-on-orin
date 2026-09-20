@@ -1,0 +1,109 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cuda",
+  "torch": "2.8.0",
+  "model": "wfzyx/von-1.0",
+  "load_plus_first_call_seconds": 9.972580677014776,
+  "repeats": 20,
+  "timing_scope": "von.system_one() wall time incl. tokenisation; 3 warmups then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "seconds": {
+        "min": 0.10746733099222183,
+        "median": 0.10835382953519002,
+        "mean": 0.10831277915858664,
+        "p95": 0.1090937501634471,
+        "max": 0.10984851000830531
+      },
+      "seconds_per_field_median": 0.05417691476759501,
+      "output": {
+        "priority": {
+          "choice": "HIGH",
+          "confidence": 0.991
+        },
+        "requires_review": {
+          "noul": 0.983
+        }
+      }
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "seconds": {
+        "min": 0.34245281002949923,
+        "median": 0.35259269952075556,
+        "mean": 0.35288502725888976,
+        "p95": 0.361897865391802,
+        "max": 0.3654798100469634
+      },
+      "seconds_per_field_median": 0.058765449920125924,
+      "output": {
+        "route": {
+          "choice": "BILLING",
+          "confidence": 0.34
+        },
+        "sentiment": {
+          "choice": "NEGATIVE",
+          "confidence": 1.0
+        },
+        "severity": {
+          "score": 1.0,
+          "confidence": 0.993
+        },
+        "mentions_refund": {
+          "noul": 0.999
+        },
+        "is_customer": {
+          "noul": 1.0
+        },
+        "needs_human": {
+          "noul": 1.0
+        }
+      }
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "seconds": {
+        "min": 0.07663383102044463,
+        "median": 0.0811004334827885,
+        "mean": 0.08086221604025923,
+        "p95": 0.08503557452349923,
+        "max": 0.08946271694730967
+      },
+      "seconds_per_field_median": 0.0811004334827885,
+      "output": {
+        "supported": {
+          "choice": "SUPPORTED",
+          "confidence": 0.991
+        }
+      }
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "seconds": {
+        "min": 0.056375847081653774,
+        "median": 0.0570574359735474,
+        "mean": 0.05728826436097734,
+        "p95": 0.05862832799903117,
+        "max": 0.05957506108097732
+      },
+      "seconds_per_field_median": 0.0570574359735474,
+      "output": {
+        "supported": {
+          "choice": "SUPPORTED",
+          "confidence": 0.99
+        }
+      }
+    }
+  ],
+  "cuda_peak_gib": 0.7763829231262207,
+  "sustained_readme_case": {
+    "seconds": 20.103519460069947,
+    "decisions": 186,
+    "decisions_per_second": 9.25211132157418
+  }
+}

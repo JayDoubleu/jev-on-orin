@@ -1,0 +1,109 @@
+{
+  "machine": "NVIDIA Jetson AGX Orin 64 GB (Tegra, sm_87)",
+  "device": "cpu",
+  "torch": "2.8.0",
+  "model": "com-kotobalabs/open-jev-deberta-v3-large",
+  "params": 437159937,
+  "load_seconds": 5.504902814049274,
+  "repeats": 20,
+  "timing_scope": "OpenJev.decide() wall time incl. tokenisation; 3 warmups then REPEATS measured",
+  "cases": [
+    {
+      "case": "readme_2fields_short",
+      "fields": 2,
+      "seconds": {
+        "min": 1.0960544369881973,
+        "median": 1.5793038625270128,
+        "mean": 1.5461401278618723,
+        "p95": 1.8145447168208195,
+        "max": 2.1070969090797007
+      },
+      "seconds_per_field_median": 0.7896519312635064,
+      "output": [
+        {
+          "choice": "HIGH",
+          "confidence": 0.72
+        },
+        {
+          "noul": 0.978
+        }
+      ]
+    },
+    {
+      "case": "support_6fields",
+      "fields": 6,
+      "seconds": {
+        "min": 2.061481611104682,
+        "median": 2.616122091538273,
+        "mean": 2.7479001385509036,
+        "p95": 3.308144006802468,
+        "max": 3.8403873740462586
+      },
+      "seconds_per_field_median": 0.4360203485897121,
+      "output": [
+        {
+          "choice": "TECHNICAL",
+          "confidence": 0.799
+        },
+        {
+          "choice": "NEGATIVE",
+          "confidence": 0.735
+        },
+        {
+          "score": 0.842,
+          "confidence": 0.494
+        },
+        {
+          "noul": 0.903
+        },
+        {
+          "noul": 0.916
+        },
+        {
+          "noul": 0.909
+        }
+      ]
+    },
+    {
+      "case": "claim_1field_long",
+      "fields": 1,
+      "seconds": {
+        "min": 2.301052263006568,
+        "median": 3.4775161235011183,
+        "mean": 3.445561705948785,
+        "p95": 4.597943155025132,
+        "max": 4.681464420980774
+      },
+      "seconds_per_field_median": 3.4775161235011183,
+      "output": [
+        {
+          "choice": "NOT_SUPPORTED",
+          "confidence": 0.525
+        }
+      ]
+    },
+    {
+      "case": "claim_1field_short",
+      "fields": 1,
+      "seconds": {
+        "min": 1.098051627050154,
+        "median": 1.4848857094766572,
+        "mean": 1.591665546054719,
+        "p95": 2.2160652874212254,
+        "max": 3.054489810951054
+      },
+      "seconds_per_field_median": 1.4848857094766572,
+      "output": [
+        {
+          "choice": "NOT_SUPPORTED",
+          "confidence": 0.523
+        }
+      ]
+    }
+  ],
+  "sustained_readme_case": {
+    "seconds": 21.1364704889711,
+    "decisions": 13,
+    "decisions_per_second": 0.6150506541185924
+  }
+}
